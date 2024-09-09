@@ -18,6 +18,9 @@ jobs:
         with:
           args: install freepascal -y
 
+      - name: Load Free Pascal
+        run: refreshenv
+
       - name: Compile Pascal code
         run: fpc puzzle.pas
 
