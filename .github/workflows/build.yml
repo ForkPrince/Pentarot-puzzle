@@ -19,7 +19,7 @@ jobs:
           args: install freepascal -y
 
       - name: Load Free Pascal
-        run: refreshenv
+        run: Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 
       - name: Compile Pascal code
         run: fpc puzzle.pas
