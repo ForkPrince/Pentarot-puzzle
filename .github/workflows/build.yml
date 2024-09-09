@@ -1,0 +1,23 @@
+name: Compile Pascal App
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Free Pascal
+        run: sudo apt-get install -y fp-compiler
+
+      - name: Compile Pascal code
+        run: fpc puzzle.pas
+
+      - name: Show Executable
+        run: ls -l .
