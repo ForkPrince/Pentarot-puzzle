@@ -16,7 +16,7 @@ jobs:
       - name: Install Free Pascal
         uses: crazy-max/ghaction-chocolatey@v3
         with:
-          args: install freepascal
+          args: install freepascal -y
 
       - name: Compile Pascal code
         run: fpc puzzle.pas
