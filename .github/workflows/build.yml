@@ -13,13 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Free Pascal
-        uses: crazy-max/ghaction-chocolatey@v3
-        with:
-          args: install freepascal -y
-
-      - name: Load Free Pascal
-        run: Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+      - name: Install Pascal
+        run: choco install lazarus -y
 
       - name: Compile Pascal code
         run: fpc puzzle.pas
